@@ -31,8 +31,17 @@ def first_word(text)
 end
 
 def titleize(text)
-  capitalizedText = text.scan(/\w+/)
-  capitalizedText.each do |word|
-    word.capitalize
+  # creation tableau words pour avoir liste des mots dans le texte
+  splitwords = text.split(" ")
+  # mettre en majuscules tous les mots du tableau si la longueur du mot est > à 3 ou si le mot est placé à index 0
+  # sinon mettre en minuscule
+  result=splitwords.each_with_index do |word, index|
+    if index ==0 || word.length > 3
+      splitwords[index] = word.capitalize
+    else
+      splitwords[index] = word.downcase
+    end
   end
+  # concatenation pour faire une phrase
+  result.join(" ")
 end
