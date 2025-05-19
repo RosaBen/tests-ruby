@@ -34,6 +34,7 @@ else
   # à partir de nb va jusqu'à 2 , prends x et fait fact = fact *x
 nb.downto(2) do |x|
   fact *= x
+  
 end
 return fact
 end
